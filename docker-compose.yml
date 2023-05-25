@@ -2,7 +2,7 @@ version: "3.9"
 services:
   #aplicação web (PHP+NGINX)
   web:
-    image: urnau/php-community:8.0.19-fpm-nginx
+    image: hidylima/basephp
     # image: urnau/php-community:latest
     # utilizado quando vamos contruir uma nova imagem
     build: 
@@ -39,8 +39,8 @@ services:
     volumes:
       - POSTGRES_VOLUME_EXEMPLO=/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: senha_exemplar_postgres
-      POSTGRES_DB: db_postgres_exemplo
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: projectDB
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - 20000:5432
@@ -53,8 +53,8 @@ services:
       - MYSQL_VOLUME_EXEMPLO=/var/lib/mysql
       #- 'MYSQL_VOLUME_EXEMPLO:/var/lib/mysql'
     environment:
-      MYSQL_ROOT_PASSWORD: senha_exemplar_mysql
-      MYSQL_DATABASE: db_mysql_exemplo
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: projectDB
     networks:
       - net_principal
     ports:
