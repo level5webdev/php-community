@@ -7,7 +7,7 @@ $password = '1234';
 
 
 try {
-  $pdo = new PDO("mysql:host=172.19.0.4;port=3306;dbname=projectDB", $username, $password);
+  $pdo = new PDO("mysql:host=172.19.0.3;port=3306;dbname=projectDB", $username, $password);
 } catch (PDOException $pe) {
   die("Não foi possível se conectar ao banco de dados $dbname :" . $pe->getMessage());
 }
